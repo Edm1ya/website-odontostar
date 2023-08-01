@@ -1,0 +1,103 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <main>
+        <section id="hero">
+            <div class="hero-container">
+                <div class="info-hero">
+                    <h2>Tu sonrisa nos impulsa!</h2>
+                    <a href="{% url 'form-date' %}">Reservar Cita</a>
+                </div>
+            </div>
+            <div class="container-cards-hero">
+                <div class="card-hero">
+                    <a href="{% url 'form-date' %}">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <p>Formulario de Cita</p>
+                    </a>
+                </div>
+                <div class="card-hero">
+                    <a href="{% url 'contact' %}#contact">
+                        <i class="fa-regular fa-address-book"></i>
+                        <p>Contacta con Nosotros</p>
+                    </a>
+                </div>
+                <div class="card-hero">
+                    <a href="{% url 'contact' %}#map-section">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Visita Nuestro Centro</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="welcome">
+            <div class="container-welcome">
+                <img src="{% static 'core/img/bienvenido.webp' %}" alt="">
+                <div class="welcome-info-container">
+                    <h2>Bienvenido a Odontostar</h2>
+                    <h3>Los mejores servicios de odontologia</h3>
+                    <p>Somos la Clínica Dental con las mejores atenciones y  contamos con excelentes profesionales de la odontología.
+                    Con precios asequible, lugar de lujo y las finas atenciones de su administración, es el mejor lugar para atender tus necesidades odontológicas.</p>
+                </div>
+            </div>
+        </section>
+        <section id="hours">
+            <h2>Nuestros Horarios</h2>
+            <div class="container">
+                <div class="container-img-hours">
+                    <img src="{% static 'core/img/horario1.webp' %}" alt="">
+                    <img src="{% static 'core/img/horario2.jpeg' %}" alt="">
+                    <img src="{% static 'core/img/horario3.png' %}" alt="">
+                    <img src="{% static 'core/img/horario4.jpeg' %}" alt="">
+                </div>
+                <div class="container-hours">
+                    <div class="table-day-hour">
+                        <div class="day">
+                            <p>lunes</p>
+                            <p>martes</p>
+                            <p>miercoles</p>
+                            <p>jueves</p>
+                            <p>viernes</p>
+                            <p>sabado</p>
+                            <p>domingo</p>
+                        </div>
+                        <div class="hour">
+                            <p>09:00 AM -06:00 PM</p>
+                            <p>09:00 AM -06:00 PM</p>
+                            <p>09:00 AM -06:00 PM</p>
+                            <p>09:00 AM -06:00 PM</p>
+                            <p>09:00 AM -06:00 PM</p>
+                            <p>08:00 AM -06:00 PM</p>
+                            <p>cerrado</p>
+                        </div>
+                    </div>
+                    <a href="{% url 'form-date' %}" class="button-cita">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <p>Reservar Cita</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="services">
+            <div class="container-services">
+                <h2>Nuestros Servicios</h2>
+                <p>Todas tus necesidades dentales en un solo lugar</p>
+                <div class="container-cards-services">
+                    {% if services %}
+                    {% for service in services|slice:":4" %}
+                        <a href="{% url 'service' service.id %}" class="card-service">
+                            <img src="{{service.image.url}}" alt="imagen de {{service.name}}">
+                            <p>{{service.name|capfirst}}</p>
+                        </a>
+                    {% endfor %}
+                    {% else %}
+                        <p>No hay objetos disponibles.</p>
+                    {% endif %}
+                </div>
+            </div>
+            <a href="{% url 'services' %}">Mas Servicios</a>
+        </section>
+    </main>
+{% endblock %}

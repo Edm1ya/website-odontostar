@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+<!-- services -->
+
+{% block content %}
+<main class="main-services">
+    <section id="services">
+        <div class="container-services">
+            <h2>Nuestros Servicios</h2>
+            <p>Todas tus necesidades dentales en un solo lugar</p>
+                <div class="container-cards-services">
+                    {% for service in service_list %}
+                    <a href="{% url 'service' service.id %}" class="card-service">
+                        <img src="{{service.image.url}}" alt="">
+                        <p>{{service.name|capfirst }}</p>
+                    </a>
+                    {% endfor %}
+                </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}
+ 

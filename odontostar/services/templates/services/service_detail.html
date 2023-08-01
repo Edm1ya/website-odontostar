@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+    <!-- servicio -->
+{% block content %}
+<main class="main-service">
+    <div class="service-container">
+        <h2 class="title-service">{{service.name}}</h2>
+        <p class="description-service">{{service.description}}</p>
+        <a class="btn-cita" href="{% url 'form-date' %}"><i class="fa-regular fa-calendar-check"></i>Agendar Cita</a>
+        <div class="back-button">
+            <a href="{% url 'services' %} "><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </div>
+</main>
+{% endblock content %}

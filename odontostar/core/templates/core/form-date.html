@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <main id="container-form-cite">
+        <h2>Formulario de cita</h2>
+        <div class="container-form">
+            <form action="">
+                <fieldset class="container-camp">
+                    <label for="">Nombre Completo</label>
+                    <div class="container-name">
+                        <input type="text" name="" id="name" required placeholder="Nombres">
+                        <input type="text" name="" id="name" required placeholder="Apellidos">
+                    </div>
+                </fieldset>
+
+                <fieldset class="container-camp-2">
+                    <div class="tel-container">
+                        <label for="">Telefono</label>
+                        <input type="tel" name="" id="" required>
+                    </div>
+                    <div class="email-container">
+                        <label for="">Correo Electronico</label>
+                        <input type="email" name="" id="" required>
+                    </div>
+                </fieldset>
+
+                <fieldset class="container-camp">
+                    <label >Primera vez que nos visita?</label>
+                    <div class="opcion-cite">
+                        <label for="first-cite""><input type="radio" value="1" name="opction" id=""> Si</label> 
+                        <label for="first-cite""><input type="radio" value="2" name="opction" id=""> No</label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="container-datetime">
+                    <label>Fecha / Hora</label>
+                    <div class="datetime">
+                        <input class="calendary" type="date" name="" id="" required>
+                        <input class="hour" type="datetime" name="" id="" required>
+                    </div>
+                </fieldset>
+
+                <fieldset id="reason-appointment">
+                    <label>Motivo de la cita</label>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </fieldset>
+
+                <input type="submit" value="Enviar" class="btn-submit-cite">
+            </form>
+        </div>
+    </main>
+{% endblock %}

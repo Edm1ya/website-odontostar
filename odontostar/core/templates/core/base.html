@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <title>Odontostar</title>
+</head>
+<body>
+    <header>
+        <img src="{% static 'core/img/logo.jpeg' %}" alt="logo-odontostar" class="img-logo">
+        <h1 class="title-logo">Odonto Star</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">inicio</a></li>
+            <li><a href="{% url 'services' %}">Servicios</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="{% url 'contact' %}">contacto</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+    <footer>
+        <div class="info-footer">
+            <p>C/Paseo de los Locutores, Esq. Seminario, #127, Sto. Dgo., Rep. Dom.</p>
+            <p><i class="fa-solid fa-phone"></i> (809) 222-3344</p>
+            <p>info@odontostar.com</p>
+        </div>
+        <div class="redes">
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p> &copy; 2023 Odontostar. Todos los derechos reservados </p>
+    </footer>
+    <script src="https://kit.fontawesome.com/26f4190241.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+environment/
+odontostar/core/__pycache__
+odontostar/core/migrations
+odontostar/odontostar/__pycache__
+odontostar/odontostar/migrations
+odontostar/services/__pycache__
+odontostar/services/migrations
