@@ -6,6 +6,12 @@
     font-family: Roboto;
 }
 
+hmtl, body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -14,8 +20,7 @@ a{
 li{
     list-style: none;
 }
-/* pagina inicio */
-/* header */
+
 header{
     display: flex;
     align-items: center;
@@ -388,6 +393,7 @@ footer{
     padding-top: 50px;
     background-color: #0577b9;
     padding: 20px 0;
+    margin-top: auto;
 }
 
 .info-footer{
@@ -527,96 +533,6 @@ footer>p{
     width: 100%;
     height: 800px;
     padding: 0 20px;
-}
-
-/* servicios */
-.main-services{
-    height: 62vh;
-    padding: 20px 0;
-}
-
-.main-services .container-cards-services{
-    margin: 20px auto;
-    padding-bottom: 20px;
-    width: 100%;
-    max-width: 1500px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.main-services .card-service{
-    max-width: 350px;
-    display: flex;
-    flex-flow: column wrap;
-    background-color: #28b6f8;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow:  1px 1px 2px 2px rgba(0, 0, 0, 0.2);
-    transition: all 300ms ease;
-}
-
-/* servicio */
-.main-service{
-    display: flex;
-    flex-wrap: wrap;
-    height: 62vh;
-    width: 100%;
-    padding: 40px 0;
-}
-
-.service-container{
-    width: 50%;
-    min-width: 400px;
-    margin: 0 auto;
-    padding: 40px;
-}
-
-.title-service{
-    font-size: 3rem;
-    padding-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.description-service{
-    display: flex;
-    text-align: justify;
-    font-size: 1.2rem;
-    padding-bottom: 30px;
-}
-
-.proceeds{
-    font-size: 1.5rem;
-    padding-bottom: 10px;
-}
-
-.btn-cita{
-    width: 100%;
-    margin-top: 10px;
-    background-color: #39b6ff;
-    padding: 25px 25px;
-    color: white;
-}
-
-
-.btn-cita:hover{
-    margin-top: 10px;
-    background-color: #02a0e9;
-}
-
-.btn-cita i{
-    font-size: 30px;
-    padding-right: 10px;
-}
-
-.back-button{
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    font-size: 40px;
-    margin-top: 30px;
 }
 
 
@@ -768,4 +684,64 @@ footer>p{
 .btn-submit-cite:hover{ 
     background-color: #02a0e9; 
     color: white;
+}
+
+/* media query para el index */
+@media screen and (max-width: 869px) { 
+
+    /* navegacion */
+    nav{
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    nav>ul{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+    nav>ul>li{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    /* Horarios */
+    .container{
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .container-img-hours{
+        display: none;
+    }
+
+    /* seccion bienvenidos */
+    .container-welcome{
+        display: grid ;
+        grid-template-columns: 1fr;
+    }
+
+    .container-welcome img{
+        display: none;
+    }
+    .welcome-info-container{
+        width: 100%;
+    }
+    
+    .welcome-info-container h2{
+        text-align: center;
+    }
+
+    .welcome-info-container h3{
+        text-align: center;
+    }
+
+    .welcome-info-container p{
+        text-align: center;
+        padding-bottom: 20px;
+    }
 }

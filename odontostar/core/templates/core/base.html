@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'services/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
     <title>Odontostar</title>
 </head>
 <body>
@@ -16,7 +18,7 @@
         <ul>
             <li><a href="{% url 'home' %}">inicio</a></li>
             <li><a href="{% url 'services' %}">Servicios</a></li>
-            <li><a href="#">blog</a></li>
+            <li><a href="{% url 'posts' %}">blog</a></li>
             <li><a href="{% url 'contact' %}">contacto</a></li>
         </ul>
     </nav>
@@ -30,13 +32,20 @@
             <p>info@odontostar.com</p>
         </div>
         <div class="redes">
-            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            {% if LINK_FACEBOOK %}
+                <a href="{{LINK_FACEBOOK}}" target=_blank><i class="fa-brands fa-square-facebook"></i></a>
+            {% endif %}
+            {% if LINK_TWITTER %}
+                <a href="{{LINK_TWITTER}}" target=_blank> <i class="fa-brands fa-twitter"></i></a>
+            {% endif %}
+            
+            {% if LINK_INSTAGRAM %}
+                <a href="{{LINK_INSTAGRAM}}" target=_blank><i class="fa-brands fa-instagram"></i></a>
+            {% endif %}
+            
         </div>
         <p> &copy; 2023 Odontostar. Todos los derechos reservados </p>
     </footer>
     <script src="https://kit.fontawesome.com/26f4190241.js" crossorigin="anonymous"></script>
-
 </body>
 </html>

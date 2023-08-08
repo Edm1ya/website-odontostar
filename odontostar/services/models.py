@@ -1,10 +1,13 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
+
+
 class Service(models.Model):
     name = models.CharField(max_length=100, verbose_name='Nombre')
-    description = models.TextField(verbose_name='Descripcion')
-    image = models.ImageField(upload_to='media', verbose_name='Imagen')
+    description = RichTextField(verbose_name="Descripcion")
+    image = models.ImageField(upload_to='media/services/', verbose_name='Imagen')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de Creacion')
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha de Modificacion')
 

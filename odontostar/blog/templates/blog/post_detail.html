@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="post-container">
+    <div class="post">
+        <img src="{{ post.img.url }}" alt="" class="img-post">
+        <h2>{{ post.title}}</h2>
+        <div class="post-content">
+            <p class="content-post">{{ post.content|safe}}</p>
+            <p class="date-post">{{post.created}}</p>
+        </div>
+        <a href="{% url 'posts' %} "><i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="blog-container">
+    <h2>blogs</h2>
+    <div class="container-card-blog">
+        {% for post in object_list %}
+            <div class="card-blog">
+                <img src="{{ post.img.url }}" alt="" class="img-blog">
+                <h3>{{ post.title }}</h3>
+                <div class="content-blog">
+                    <p>{{ post.content|truncatewords:"50"|safe }}</p>
+                    <a href="{% url 'post' post.id %}">Leer mas</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -5,3 +5,4 @@ class ServicesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'services'
     verbose_name = 'Servicios'
+    readonly_fields = ['created', 'updated']
