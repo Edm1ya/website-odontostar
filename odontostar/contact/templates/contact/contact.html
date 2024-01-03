@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+    <!-- contact -->
+{% block content %}
+<main class="main-contact">
+    <section id="contact">
+        <div class="contact-container">
+            <form method="post">{% csrf_token %}
+                {{ form.as_table }}
+                <input type="submit" value="Enviar" id="submit-contact-form" class="btn-submit">
+            </form>
+         </div>
+    </section>
+    <section id="map-section">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d668.9871608207199!2d-69.93357526135034!3d18.46721573852976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89e569b31835%3A0xb2a1edba2efc9377!2sTorre%20Paseo%20One%20Four!5e0!3m2!1ses!2sdo!4v1690809605587!5m2!1ses!2sdo" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+</main>
+{% endblock content %}

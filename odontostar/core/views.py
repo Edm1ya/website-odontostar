@@ -11,8 +11,6 @@ class HomePageView(TemplateView):
         context['services'] = Service.objects.all()
         return context
 
-class ContactPageView(TemplateView):
-    template_name = 'core/contact.html'
 
 class FormDateView(TemplateView):
     template_name = 'core/form-date.html'
